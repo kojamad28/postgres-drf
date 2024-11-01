@@ -3,5 +3,12 @@ ruff
 mypy
 tox
 psycopg
-sqlalchemy
-python-dotenv
+django
+djangorestframework
+django-environ
+gunicorn
+pytest-django
+pytest-randomly
+pytest-cov
+factory-boy
+django-structlog
