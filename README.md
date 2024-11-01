@@ -1,3 +1,3 @@
 # Postgres DRF
 
-This repository provides a basic python environment connected with PostgreSQL database.
+This repository provides a Django REST framework project template connected with PostgreSQL database.
