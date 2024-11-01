@@ -6,6 +6,7 @@ legacy_tox_ini = """
         black
         ruff
         mypy
+        pytest
 
     [black]
     deps = black
@@ -18,7 +19,20 @@ legacy_tox_ini = """
     [mypy]
     deps = mypy
     commands = mypy .
+
+    [pytest]
+    deps = 
+        pytest
+        pytest-django
+    commands = pytest
 """
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings.development"
+python_files = ["test_*.py"]
+addopts = "-v --reuse-db"
+testpaths = ["tests"]
+django_debug_mode = true
 
 [tool.ruff]
 lint.ignore = ['E501']
