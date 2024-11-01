@@ -1,0 +1,27 @@
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    skipdist = True
+    env_list = 
+        black
+        ruff
+        mypy
+
+    [black]
+    deps = black
+    commands = black .
+
+    [ruff]
+    deps = ruff
+    commands = ruff check .
+
+    [mypy]
+    deps = mypy
+    commands = mypy .
+"""
+
+[tool.ruff]
+lint.ignore = ['E501']
+lint.select = ['C9', 'E', 'F', 'W', 'I']
+line-length = 120
+src = ['.']
