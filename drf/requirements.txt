@@ -1,0 +1,15 @@
+black
+ruff
+mypy
+tox
+psycopg
+django
+djangorestframework
+django-environ
+django-silk
+gunicorn
+pytest-django
+pytest-randomly
+pytest-cov
+factory-boy
+django-structlog

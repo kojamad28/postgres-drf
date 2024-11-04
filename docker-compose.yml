@@ -10,33 +10,44 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-  django:
+    networks:
+      - postgres-drf-network
+  drf:
     image: kojamad28/postgres-drf
     container_name: drf
-    build: 
-      context: ./django
+    build:
+      context: ./drf
       args:
         REQ_TXT: "requirements.txt"
+    working_dir: /usr/src/app/drf
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/usr/src/app
     expose:
       - "8000"
     env_file:
-      - ./django/.env
+      - ./drf/.env
     depends_on:
       - postgres
+    networks:
+      - postgres-drf-network
   nginx:
     image: kojamad28/nginx
     container_name: nginx
     build: ./nginx
     volumes:
-      - ./static:/usr/src/app/static
-      - ./media:/usr/src/app/media
+      - ./drf/static:/usr/src/app/static
+      - ./drf/media:/usr/src/app/media
     ports:
       - "80:80"
     depends_on:
-      - django
+      - drf
+    networks:
+      - postgres-drf-network
+
+networks:
+  postgres-drf-network:
+    driver: bridge
 
 volumes:
   postgres_data:
