@@ -32,7 +32,7 @@ services:
     networks:
       - postgres-drf-network
   nginx:
-    image: kojamad28/nginx
+    image: kojamad28/drf-nginx
     container_name: nginx
     build: ./nginx
     volumes:
