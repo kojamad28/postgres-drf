@@ -26,7 +26,7 @@ services:
     expose:
       - "8000"
     env_file:
-      - ./drf/.env
+      - ./drf/.env.development
     depends_on:
       - postgres
     networks:
