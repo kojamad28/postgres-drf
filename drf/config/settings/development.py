@@ -24,27 +24,13 @@ ALLOWED_HOSTS = ["*"]
 
 DATABASES = {
     "default": {
-        "ENGINE": env.get_value(
-            "DATABASE_ENGINE", default="django.db.backends.postgresql"
-        ),
-        "NAME": env.get_value(
-            "DATABASE_DB", default="postgres"
-        ),
-        "USER": env.get_value(
-            "DATABASE_USER", default="postgres"
-        ),
-        "PASSWORD": env.get_value(
-            "DATABASE_PASSWORD", default="postgres"
-        ),
-        "HOST": env.get_value(
-            "DATABASE_HOST", default="localhost"
-        ),
-        "PORT": env.get_value(
-            "DATABASE_PORT", default="5432"
-        ),
-        "OPTIONS": {
-            "options": f"-c search_path={env.get_value('DATABASE_SCHEMA', default='public')}"
-        },
+        "ENGINE": env("DATABASE_ENGINE", default="django.db.backends.postgresql"),
+        "NAME": env("DATABASE_DB", default="postgres"),
+        "USER": env("DATABASE_USER", default="postgres"),
+        "PASSWORD": env("DATABASE_PASSWORD", default="postgres"),
+        "HOST": env("DATABASE_HOST", default="localhost"),
+        "PORT": env("DATABASE_PORT", default="5432"),
+        "OPTIONS": {"options": f"-c search_path={env('DATABASE_SCHEMA', default='public')}"},
     }
 }
 
