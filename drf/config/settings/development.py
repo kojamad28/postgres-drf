@@ -26,9 +26,9 @@ DATABASES = {
     "default": {
         "ENGINE": env("DATABASE_ENGINE", default="django.db.backends.postgresql"),
         "NAME": env("DATABASE_DB", default="postgres"),
-        "USER": env("DATABASE_USER", default="postgres"),
-        "PASSWORD": env("DATABASE_PASSWORD", default="postgres"),
-        "HOST": env("DATABASE_HOST", default="localhost"),
+        "USER": env("DATABASE_USER"),
+        "PASSWORD": env("DATABASE_PASSWORD"),
+        "HOST": env("DATABASE_HOST", default="postgres"),
         "PORT": env("DATABASE_PORT", default="5432"),
         "OPTIONS": {"options": f"-c search_path={env('DATABASE_SCHEMA', default='public')}"},
     }
