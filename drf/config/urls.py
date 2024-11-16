@@ -15,18 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path("blog/", include("blog.urls"))
 """
 
-from pathlib import Path
-
-import environ
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-env = environ.Env()
-env.read_env(str(BASE_DIR / ".env"))
+from config.settings.development import env
+#from config.settings.production import env
 
 urlpatterns = [
     path("api/accounts/", include("accounts.urls")),
