@@ -8,7 +8,6 @@ env.read_env(str(BASE_DIR / ".env.development"))
 
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY", default="django-secretkey")
@@ -20,7 +19,6 @@ ALLOWED_HOSTS = ["*"]
 
 
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
     "default": {
