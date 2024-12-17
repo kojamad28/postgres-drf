@@ -11,5 +11,6 @@ gunicorn
 pytest-django
 pytest-randomly
 pytest-cov
+pytest-structlog
 factory-boy
 django-structlog
