@@ -18,6 +18,13 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+# Application definition
+
+INSTALLED_APPS += ["silk",]
+
+MIDDLEWARE += ["silk.middleware.SilkyMiddleware",]
+
+
 # Database
 
 DATABASES = {

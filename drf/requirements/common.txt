@@ -1,0 +1,6 @@
+psycopg
+django
+djangorestframework
+django-environ
+gunicorn
+django-structlog

@@ -3,8 +3,8 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
-from config.settings.dev import env
-#from config.settings.prod import env
+#from config.settings.dev import env
+from config.settings.prod import env
 
 urlpatterns = [
     path("api/accounts/", include("accounts.urls")),
