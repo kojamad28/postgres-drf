@@ -1,7 +1,7 @@
 from factory import LazyAttribute
 from factory.django import DjangoModelFactory
 
-from .models import CustomUser
+from accounts.models import CustomUser
 
 
 class UserFactory(DjangoModelFactory):
