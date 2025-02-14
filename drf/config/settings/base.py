@@ -16,6 +16,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "django_filters",
+    "guardian",
     "accounts",
 ]
 
@@ -75,6 +77,12 @@ LOGIN_URL = "accounts:login"
 LOGIN_REDIRECT_URL = "accounts:home"
 
 LOGOUT_REDIRECT_URL = "accounts:login"
+
+
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend", # default
+    "guardian.backends.ObjectPermissionBackend",
+)
 
 
 # Internationalization

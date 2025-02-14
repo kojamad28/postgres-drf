@@ -1,6 +1,12 @@
 psycopg
 django
 djangorestframework
+PyYAML
+uritemplate
+Markdown
+Pygments
+django-filter
+django-guardian
 django-environ
 gunicorn
 django-structlog
