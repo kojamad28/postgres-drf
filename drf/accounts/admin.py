@@ -41,7 +41,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = CustomUser
-        fields = ("username", "email", "password", "is_active", "is_admin")
+        fields = ("username", "email", "password", "is_active", "is_staff")
 
     def clean_password(self):
         return self.initial["password"]
@@ -55,7 +55,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {"fields": ("email", "password")}),
         ("Personal info", {"fields": ()}),
-        ("Permissions", {"fields": ("is_admin",)}),
+        ("Permissions", {"fields": ("is_staff",)}),
     )
     add_fieldsets = (
         (None, {
@@ -65,11 +65,10 @@ class CustomUserAdmin(UserAdmin):
     )
     list_display = ("username", "email")
     list_display_links = ("username",)
-    list_filter = ("is_admin",)
+    list_filter = ("is_staff",)
     search_fields = ("username", "email")
     ordering = ("username",)
     filter_horizontal = ()
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
-admin.site.unregister(Group)
