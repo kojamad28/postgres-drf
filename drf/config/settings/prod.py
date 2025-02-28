@@ -4,7 +4,7 @@ import structlog
 from .base import *  # noqa
 
 env = environ.Env()
-env.read_env(str(BASE_DIR / "postgres" / ".env"))
+env.read_env(str(BASE_DIR / ".env"))
 
 
 # Quick-start development settings - unsuitable for production
