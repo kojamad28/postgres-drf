@@ -24,7 +24,7 @@ ALLOWED_HOSTS = [
 
 DATABASES = {
     "default": {
-        "ENGINE": env("DATABASE_ENGINE", default="django.db.backends.postgresql"),
+        "ENGINE": "django.db.backends.postgresql",
         "NAME": env("POSTGRES_DB", default="postgres"),
         "USER": env("POSTGRES_USER"),
         "PASSWORD": env("POSTGRES_PASSWORD"),
