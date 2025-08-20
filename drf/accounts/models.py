@@ -55,7 +55,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         default=True
     )
     is_staff = models.BooleanField(
-        verbose_name=_("admin"),
+        verbose_name=_("staff"),
         default=False
     )
 
