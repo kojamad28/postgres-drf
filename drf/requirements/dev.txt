@@ -7,8 +7,11 @@ ruff
 mypy
 tox
 django-silk
+pytest
 pytest-django
 pytest-randomly
 pytest-cov
 pytest-structlog
 factory-boy
+sphinx
+sphinxcontrib-django
